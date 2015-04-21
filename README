@@ -1,13 +1,21 @@
+# Simple Event Facade for Java ... is to Event what flat log message is to Slf4J
 
-Simple Event Facade for Java ... is to Event what flat log message is to Slf4J
+*This library is helpful for instrumenting code with an event api, and enrich "Applicative Thread Call Stack".*
+Event not only produces logs, but they can also be used by other type of listeners,
+for example to update performance metrics statistics.
 
+## Build status
 
-This library is helpfull for instrumenting code with an event api, and enrich "Applicative Thread Call Stack".
+[![Build Status](https://api.travis-ci.org/lauvigne/sef4j.png)](https://travis-ci.org/lauvigne/sef4j)
+
+##
+
+This library is helpful for instrumenting code with an event api, and enrich "Applicative Thread Call Stack".
 Event not only produces logs, but they can also be used by other type of listeners, 
 for example to update performance metrics statistics.
 
-For the developper, instumenting code is as simple as wrapping some method by push()/pop() aspect:
-{code}
+For the developer, instrumenting code is as simple as wrapping some method by push()/pop() aspect:
+```java
    public void foo() {
      StackPropper toPop = LocalCallStack.push("foo");
      try {
@@ -30,8 +38,7 @@ For the developper, instumenting code is as simple as wrapping some method by pu
      	toPop.close();
      }
    }
-
-{code}
+```
 
 This will enrich an "applicative call stack", and produce push event and pop events, 
 that can be captured by listeners.
@@ -46,11 +53,11 @@ A Typical usage is to produce 4 default real-time source of information when ins
 - Real-time progress for a task:
   to give user feedback message for a specific running task, like 
      "processing 3 / 100 ... estimated time remaining= 30 seconds"
-- Delayed performance measurment statistics:
-  to give developper feedback like:
+- Delayed performance measurement statistics:
+  to give developers feedback like:
      "stats for X/Y/Z: executed 127 times, cumulated time=26 seconds, histogram: [0-0 ms]: 13 times, [1-32 ms]: 45 x avg=16ms, [33-64 ms]: 30 x 40ms ..."
 
-Developpers are completely free to add more handlers on call stack events, to do custom statistics,
-for example to aggregate counters per category, usign some provided method parameter value. 
+Developers are completely free to add more handlers on call stack events, to do custom statistics,
+for example to aggregate counters per category, using some provided method parameter value.
 
      
