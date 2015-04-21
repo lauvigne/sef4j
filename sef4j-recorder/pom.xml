@@ -17,28 +17,6 @@
   	<logback.version>0.9.30</logback.version>
   </properties>
 
-	<distributionManagement>
-<!--
-		<repository>
-			<id>lyxor.repo.release</id>
-			<name>Lyxor</name>
-			<url>https://mccprdmav10.fr.world.socgen:8143/nexus/content/repositories/lyxor</url>
-		</repository>
-		<snapshotRepository>
-			<id>lyxor.repo.snapshot</id>
-			<name>Lyxor Snapshots</name>
-			<url>https://mccprdmav10.fr.world.socgen:8143/nexus/content/repositories/lyxor-snapshots</url>
-			<uniqueVersion>true</uniqueVersion>
-		</snapshotRepository>
--->
-		<repository>
-			<id>thirdparty</id>
-			<name>Lyxor-Thirdparty</name>
-			<url>http://drxdevweb02.fr.world.socgen:8081/nexus/content/repositories/thirdparty</url>
-		</repository>
-	</distributionManagement>
-
-	
   <dependencies>
   
     <dependency>
